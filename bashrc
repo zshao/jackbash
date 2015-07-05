@@ -395,3 +395,9 @@ complete -C '/usr/local/bin/aws_completer' aws
 # Oracle JDK 1.7
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export PATH=$JAVA_HOME/bin:$PATH
+
+# Restore history -a
+export PROMPT_COMMAND='history -a'
+export CURSOR_PROMPT='>'
+
+export PS1=$(echo "$PS1" | sed 's@\\n@ @')
