@@ -375,3 +375,23 @@ END { printf "\n"; } ')
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH
+
+
+
+
+##### zshao's own changes
+alias e='emacs -nw'
+export EDITOR=`which emacs`
+export SVN_EDITOR=`which emacs`
+export GIT_EDITOR=`which emacs`
+
+export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
+
+# AWS scripts
+export PATH="/usr/local/aws/bin:$PATH"
+complete -C '/usr/local/bin/aws_completer' aws
+
+# Oracle JDK 1.7
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export PATH=$JAVA_HOME/bin:$PATH
