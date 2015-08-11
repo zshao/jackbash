@@ -393,7 +393,13 @@ export PATH="/usr/local/aws/bin:$PATH"
 complete -C '/usr/local/bin/aws_completer' aws
 
 # Oracle JDK 1.7
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+if test -z "$MACHTYPE"; then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+elif test -d "/usr/lib/jvm/java-7-oracle-cloudera"; then
+  export JAVA_HOME=/usr/lib/jvm/java-7-oracle-cloudera
+elif test -d "/usr/lib/jvm/j2sdk1.6-oracle"; then
+  export JAVA_HOME=/usr/lib/jvm/j2sdk1.6-oracle
+fi
 export PATH=$JAVA_HOME/bin:$PATH
 
 # Restore history -a
