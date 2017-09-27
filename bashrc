@@ -87,7 +87,7 @@ ex=01;32:\
 *.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:\
 *.ogg=01;35:*.mp3=01;35:*.wav=01;35:\
 ";
-alias grep="/usr/bin/grep --color=auto"
+alias grep="grep --color=auto"
 export GIT_CEILING_DIRECTORIES=`echo $HOME | sed 's#/[^/]*$##'`  # Either /home(linux) or /Users(mac)
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
@@ -385,8 +385,8 @@ export EDITOR=`which emacs`
 export SVN_EDITOR=`which emacs`
 export GIT_EDITOR=`which emacs`
 
-export CFLAGS=-Qunused-arguments
-export CPPFLAGS=-Qunused-arguments
+#export CFLAGS=-Qunused-arguments
+#export CPPFLAGS=-Qunused-arguments
 
 # AWS scripts
 export PATH="/usr/local/aws/bin:$PATH"
